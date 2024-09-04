@@ -3,6 +3,7 @@ package com.todo.controller;
 import com.todo.dto.TodoDTO;
 import com.todo.entity.Todo;
 import com.todo.service.TodoService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1")
+@Slf4j
 public class TodoController {
 
     private TodoService todoService;
@@ -23,6 +25,7 @@ public class TodoController {
 
     @PostMapping("/todo")
     public ResponseEntity<TodoDTO> addTodo(@RequestBody TodoDTO todoDTO, @RequestParam(value = "file", required = false) MultipartFile file) {
+        log.info("Adding New Record:");
         TodoDTO response = todoService.addTodo(todoDTO, file);
         return ResponseEntity.ok(response);
     }

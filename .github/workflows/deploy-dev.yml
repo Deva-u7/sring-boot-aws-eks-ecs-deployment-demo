@@ -25,8 +25,8 @@ jobs:
       - name: Set up AWS CLI
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-access-key-id: 'AKIAUJPP7X57DJ3HD4UC'
+          aws-secret-access-key: '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'
           aws-region: 'ap-south-1'
 
       - name: Amazon ECR
@@ -36,11 +36,11 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t ${{ secrets.ECR_REPO }}:latest .
+          docker build -t 295245430654.dkr.ecr.ap-south-1.amazonaws.com/my-app-repo:latest .
 
       - name: Push Docker image
         run: |
-          docker push ${{ secrets.ECR_REPO }}:latest
+          docker push 295245430654.dkr.ecr.ap-south-1.amazonaws.com/my-app-repo:latest
 
       - name: Configure kubectl
         run: |

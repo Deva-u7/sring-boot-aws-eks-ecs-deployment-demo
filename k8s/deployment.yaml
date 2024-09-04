@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: todo-service
-          image: deva7777/todo-service
+          image: 295245430654.dkr.ecr.ap-south-1.amazonaws.com/my-app-repo
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: todo-service
-          image: 295245430654.dkr.ecr.ap-south-1.amazonaws.com/my-app-repo:latest
+          image: <ecr-repo-url>/my-app-repo:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
